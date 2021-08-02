@@ -8,7 +8,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 @Slf4j
 public class AuthLevelConfig {
 
-    public void setAuthLevel(final HttpSecurity httpSecurity, final AuthLevel authLevel) throws Exception {
+    public void setConfiguration(final HttpSecurity httpSecurity, final AuthLevel authLevel) throws Exception {
         switch (authLevel) {
             case NORMAL:
                 normalAuthConfig(httpSecurity);
