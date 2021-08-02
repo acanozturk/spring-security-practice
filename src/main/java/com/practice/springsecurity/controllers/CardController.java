@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 public class CardController {
 
-    @GetMapping("/api/card")
+    @GetMapping("/api/cards")
     private String cardTest() {
 
         return "card";
