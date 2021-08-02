@@ -35,6 +35,7 @@ public class AuthLevelConfig {
                 .formLogin()
                 .and()
                 .httpBasic();
+
         log.info("Authentication configuration is set to NORMAL.");
     }
 
@@ -47,6 +48,7 @@ public class AuthLevelConfig {
                 .formLogin()
                 .and()
                 .httpBasic();
+
         log.info("Authentication configuration is set to PERMIT-ALL.");
     }
 
@@ -59,6 +61,7 @@ public class AuthLevelConfig {
                 .formLogin()
                 .and()
                 .httpBasic();
+
         log.info("Authentication configuration is set to DENY-ALL.");
     }
 

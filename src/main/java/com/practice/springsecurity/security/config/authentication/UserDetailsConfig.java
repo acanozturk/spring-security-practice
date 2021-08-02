@@ -12,7 +12,7 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 @Configuration
 @Slf4j
-public class UserTypeConfig {
+public class UserDetailsConfig {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
