@@ -1,4 +1,4 @@
-package com.practice.springsecurity.security.config.authconfigs;
+package com.practice.springsecurity.security.config.authentication;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
@@ -9,7 +9,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 public class AuthLevelConfig {
 
     public void setAuthLevel(final HttpSecurity httpSecurity, final AuthLevel authLevel) throws Exception {
-
         switch (authLevel) {
             case NORMAL:
                 normalAuthConfig(httpSecurity);
@@ -21,7 +20,6 @@ public class AuthLevelConfig {
                 denyAllAuthConfig(httpSecurity);
                 break;
         }
-
     }
 
     private void normalAuthConfig(final HttpSecurity httpSecurity) throws Exception {

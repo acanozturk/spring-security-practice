@@ -1,7 +1,7 @@
 package com.practice.springsecurity.security.config;
 
-import com.practice.springsecurity.security.config.authconfigs.AuthLevel;
-import com.practice.springsecurity.security.config.authconfigs.AuthLevelConfig;
+import com.practice.springsecurity.security.config.authentication.AuthLevel;
+import com.practice.springsecurity.security.config.authentication.AuthLevelConfig;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -11,7 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 @EnableWebSecurity
 @AllArgsConstructor
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final AuthLevelConfig authLevelConfig;
 
