@@ -1,7 +1,7 @@
 package com.practice.springsecurity.security.config;
 
-import com.practice.springsecurity.security.config.authentication.AuthLevel;
-import com.practice.springsecurity.security.config.authentication.AuthLevelConfig;
+import com.practice.springsecurity.security.config.auth.AuthLevel;
+import com.practice.springsecurity.security.config.auth.AuthLevelConfig;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

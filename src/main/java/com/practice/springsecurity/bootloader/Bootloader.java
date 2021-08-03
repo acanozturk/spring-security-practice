@@ -18,7 +18,7 @@ public class Bootloader implements CommandLineRunner {
     private static final int ENTITY_COUNT = 50;
 
     private final MockNeat mockNeat = MockNeat.threadLocal();
-    private final BCryptPasswordEncoder bCryptPasswordEncoder;
+    private final BCryptPasswordEncoder passwordEncoder;
 
     private final CustomerRepository customerRepository;
 
@@ -35,7 +35,7 @@ public class Bootloader implements CommandLineRunner {
         admin.setFirstName("admin");
         admin.setLastName("admin");
         admin.setEmail("admin@admin.com");
-        admin.setPassword(bCryptPasswordEncoder.encode("admin"));
+        admin.setPassword(passwordEncoder.encode("admin"));
         admin.setRole(UserRole.ADMIN);
 
         customerRepository.save(admin);
@@ -50,7 +50,7 @@ public class Bootloader implements CommandLineRunner {
             customer.setFirstName(mockNeat.names().first().valStr());
             customer.setLastName(mockNeat.names().last().valStr());
             customer.setEmail(email);
-            customer.setPassword(bCryptPasswordEncoder.encode(password));
+            customer.setPassword(passwordEncoder.encode(password));
             customer.setRole(UserRole.USER);
 
             customerRepository.save(customer);

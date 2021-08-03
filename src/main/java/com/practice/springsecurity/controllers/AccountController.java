@@ -11,6 +11,6 @@ public class AccountController {
     @GetMapping("/api/account")
     private String accountTest() {
 
-        return "account" ;
+        return "account";
     }
 }

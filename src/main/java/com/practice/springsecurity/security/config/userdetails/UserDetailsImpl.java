@@ -28,7 +28,7 @@ public class UserDetailsImpl implements UserDetails {
 
     private String setAuthorities() {
 
-        return customer.getRole().toString().toLowerCase();
+        return customer.getRole().name().toLowerCase();
     }
 
     @Override
