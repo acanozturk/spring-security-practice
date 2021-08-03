@@ -13,7 +13,7 @@ public class ContactController {
 
     private final ContactService contactService;
 
-    @PostMapping("/contacts")
+    @PostMapping("/contact")
     public Contact saveContactDetailsRequest(@RequestBody final Contact contact) {
 
         return contactService.saveContactDetails(contact);
