@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
-public class CustomerDetailsService implements UserDetailsService {
+public class UserDetailsServiceImpl implements UserDetailsService {
 
     private final CustomerRepository customerRepository;
 
@@ -22,6 +22,6 @@ public class CustomerDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException("User not found.");
         }
 
-        return new CustomerSecurity(customer);
+        return new UserDetailsImpl(customer);
     }
 }

@@ -11,7 +11,7 @@ import java.util.Collection;
 import java.util.List;
 
 @AllArgsConstructor
-public class CustomerSecurity implements UserDetails {
+public class UserDetailsImpl implements UserDetails {
 
     private static final long serialVersionUID = -6690946490872875352L;
 
