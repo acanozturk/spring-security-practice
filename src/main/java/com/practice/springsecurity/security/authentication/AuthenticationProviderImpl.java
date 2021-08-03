@@ -32,7 +32,7 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
 
         if(customer != null) {
             if(passwordEncoder.matches(credentials, customer.getPassword())) {
-                final String userRole = customer.getRole().name().toLowerCase();
+                final String userRole = customer.getRole();
 
                 return generateAuthToken(username, credentials, userRole);
             } else {

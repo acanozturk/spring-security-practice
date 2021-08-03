@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 public class AccountController {
 
-    @GetMapping("/api/account")
+    @GetMapping("/account")
     private String accountTest() {
 
         return "account";

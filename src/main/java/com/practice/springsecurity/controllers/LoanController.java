@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 public class LoanController {
 
-    @GetMapping("/api/loans")
+    @GetMapping("/loans")
     private String loanTest() {
 
         return "loan";

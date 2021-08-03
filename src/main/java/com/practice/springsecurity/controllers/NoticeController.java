@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 public class NoticeController {
 
-    @GetMapping("/api/notices")
+    @GetMapping("/notices")
     private String noticeTest() {
 
         return "notice";

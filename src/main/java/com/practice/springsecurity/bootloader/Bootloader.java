@@ -1,7 +1,6 @@
 package com.practice.springsecurity.bootloader;
 
 import com.practice.springsecurity.entities.Customer;
-import com.practice.springsecurity.entities.UserRole;
 import com.practice.springsecurity.repositories.CustomerRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

@@ -1,22 +1,28 @@
 package com.practice.springsecurity.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 
 @Data
-@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "customers")
-public class Customer extends AbstractBaseEntity {
+public class Customer {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer customerId;
 
     private String firstName;
     private String lastName;
     private String email;
+    private String phone;
+
+    @JsonIgnore
     private String password;
 
-    @Enumerated(EnumType.STRING)
-    private UserRole role;
+    private String role;
+    private String createdAt;
 
 }

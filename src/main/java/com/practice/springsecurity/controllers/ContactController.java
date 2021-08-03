@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 public class ContactController {
 
-    @GetMapping("/api/contact")
+    @GetMapping("/contact")
     private String contactTest() {
 
         return "contact";
