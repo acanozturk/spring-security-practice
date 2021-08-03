@@ -31,7 +31,7 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
         final Customer customer = customerRepository.findByEmail(username);
 
         if(customer != null) {
-            if(passwordEncoder.matches(credentials, customer.getPassword())) {
+            if(passwordEncoder.matches(credentials, customer.getPwd())) {
                 final String userRole = customer.getRole();
 
                 return generateAuthToken(username, credentials, userRole);

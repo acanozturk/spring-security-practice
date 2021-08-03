@@ -3,6 +3,7 @@ package com.practice.springsecurity.entities;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 @Data
 @Entity
@@ -11,11 +12,11 @@ public class Account {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer accountId;
+    private Integer accountNumber;
 
     private Integer customerId;
     private String accountType;
     private String branchAddress;
-    private String createdAt;
+    private Timestamp createdAt;
 
 }

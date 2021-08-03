@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 @Data
 @Entity
@@ -14,15 +15,14 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer customerId;
 
-    private String firstName;
-    private String lastName;
+    private String name;
     private String email;
-    private String phone;
+    private String mobileNumber;
 
     @JsonIgnore
-    private String password;
+    private String pwd;
 
     private String role;
-    private String createdAt;
+    private Timestamp createdAt;
 
 }

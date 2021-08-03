@@ -3,6 +3,7 @@ package com.practice.springsecurity.entities;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 @Data
 @Entity
@@ -18,7 +19,7 @@ public class Card {
     private String cardType;
     private Integer totalLimit;
     private Integer amountUsed;
-    private Integer amountAvailable;
-    private String createdAt;
+    private Integer availableAmount;
+    private Timestamp createdAt;
 
 }

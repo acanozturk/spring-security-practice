@@ -3,6 +3,8 @@ package com.practice.springsecurity.entities;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
+import java.util.Date;
 
 @Data
 @Entity
@@ -11,14 +13,14 @@ public class Loan {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer loanId;
+    private Integer loanNumber;
 
     private Integer customerId;
-    private String loanDate;
     private String loanType;
-    private String loanAmount;
-    private String amountPaid;
-    private String amountRemaining;
-    private String createdAt;
+    private Integer totalLoan;
+    private Integer amountPaid;
+    private Integer outstandingAmount;
+    private Date startDt;
+    private Timestamp createdAt;
 
 }

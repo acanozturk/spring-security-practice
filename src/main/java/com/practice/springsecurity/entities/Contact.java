@@ -3,6 +3,7 @@ package com.practice.springsecurity.entities;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 @Data
 @Entity
@@ -17,6 +18,6 @@ public class Contact {
     private String contactEmail;
     private String subject;
     private String message;
-    private String createdAt;
+    private Timestamp createdAt;
 
 }

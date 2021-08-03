@@ -3,6 +3,8 @@ package com.practice.springsecurity.entities;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
+import java.util.Date;
 
 @Data
 @Entity
@@ -13,13 +15,13 @@ public class Transaction {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer transactionId;
 
-    private Integer accountId;
+    private Integer account_number;
     private Integer customerId;
-    private String transactionDate;
     private String transactionSummary;
     private String transactionType;
-    private Integer transactionAmount;
-    private Integer balance;
-    private String createdAt;
+    private Integer transactionAmt;
+    private Integer closingBalance;
+    private Date transactionDt;
+    private Timestamp createdAt;
 
 }

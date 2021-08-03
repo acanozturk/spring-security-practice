@@ -3,6 +3,8 @@ package com.practice.springsecurity.entities;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
+import java.util.Date;
 
 @Data
 @Entity
@@ -15,9 +17,9 @@ public class Notice {
 
     private String noticeSummary;
     private String noticeDetails;
-    private String beginDate;
-    private String endDate;
-    private String createdAt;
-    private String updatedAt;
+    private Date noticBegDt;
+    private Date noticEndDt;
+    private Timestamp createdAt;
+    private Date updatedAt;
 
 }

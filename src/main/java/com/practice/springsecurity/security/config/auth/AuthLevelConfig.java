@@ -36,12 +36,12 @@ public class AuthLevelConfig {
                 .and()
                 .authorizeRequests()
                 .antMatchers("/account").authenticated()
-                .antMatchers("/balance").authenticated()
-                .antMatchers("/loans").authenticated()
                 .antMatchers("/cards").authenticated()
-                .antMatchers("/user").authenticated()
-                .antMatchers("/notices").permitAll()
+                .antMatchers("/loans").authenticated()
+                .antMatchers("/transactions").authenticated()
+                .antMatchers("/login").authenticated()
                 .antMatchers("/contact").permitAll()
+                .antMatchers("/notices").permitAll()
                 .and()
                 .httpBasic();
 

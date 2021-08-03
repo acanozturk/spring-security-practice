@@ -1,17 +1,22 @@
 package com.practice.springsecurity.controllers;
 
+import com.practice.springsecurity.entities.Contact;
+import com.practice.springsecurity.services.ContactService;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @AllArgsConstructor
 public class ContactController {
 
-    @GetMapping("/contact")
-    private String contactTest() {
+    private final ContactService contactService;
 
-        return "contact";
+    @PostMapping("/contacts")
+    public Contact saveContactDetailsRequest(@RequestBody final Contact contact) {
+
+        return contactService.saveContactDetails(contact);
     }
 
 }
