@@ -1,5 +1,6 @@
 INSERT INTO customers(name, email, mobile_number, pwd, role)
-VALUES ('user','user@user.com', '5554561234', '$2y$12$IPaRi2Qn8dMOP20pXuWggumWXD7M0tRq58GLxtEv7.8Z/.2Ptrxhm', 'admin');
+    ('user','user@user.com', '5446875366', '$2a$12$t2lOfR0qySVdkfxp3UGk5OAiZfM3mQKTrVl7zt.tFPpGfgqSQhn1u', 'user'),
+('admin','admin@admin.com', '5554561234', '$2y$12$IPaRi2Qn8dMOP20pXuWggumWXD7M0tRq58GLxtEv7.8Z/.2Ptrxhm', 'admin');
 
 
 INSERT INTO accounts(customer_id, account_type, branch_address)
@@ -37,5 +38,5 @@ VALUES
 
 INSERT INTO authorities(customer_id, name)
 VALUES
-(1, 'WRITE'),
-(1, 'READ');
+(1, 'ROLE_USER'),
+(2, 'ROLE_ADMIN');
