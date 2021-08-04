@@ -34,3 +34,8 @@ VALUES
 ('Net Banking Offers', 'Customers who will opt for Internet banking while opening a saving account will get a $50 amazon voucher', '2020-10-14', '2020-12-05'),
 ('Mobile App Downtime', 'The mobile application of the EazyBank will be down from 2AM-5AM on 12/05/2020 due to maintenance activities', '2020-10-14', '2020-12-01'),
 ('E Auction notice', 'There will be a e-auction on 12/08/2020 on the Bank website for all the stubborn arrears.Interested parties can participate in the e-auction', '2020-10-14', '2020-12-08');
+
+INSERT INTO authorities(customer_id, name)
+VALUES
+(1, 'WRITE'),
+(1, 'READ');

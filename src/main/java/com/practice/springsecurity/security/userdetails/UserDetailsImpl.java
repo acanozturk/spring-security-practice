@@ -1,4 +1,4 @@
-package com.practice.springsecurity.security.config.userdetails;
+package com.practice.springsecurity.security.userdetails;
 
 import com.practice.springsecurity.entities.Customer;
 import lombok.AllArgsConstructor;
@@ -21,12 +21,12 @@ public class UserDetailsImpl implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         final List<GrantedAuthority> authorities = new ArrayList<>();
 
-        authorities.add(new SimpleGrantedAuthority(setAuthorities()));
+        authorities.add(new SimpleGrantedAuthority(setAuthority()));
 
         return authorities;
     }
 
-    private String setAuthorities() {
+    private String setAuthority() {
 
         return customer.getRole();
     }

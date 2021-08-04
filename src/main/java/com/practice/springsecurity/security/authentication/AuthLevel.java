@@ -1,4 +1,4 @@
-package com.practice.springsecurity.security.config.auth;
+package com.practice.springsecurity.security.authentication;
 
 public enum AuthLevel {
 

@@ -1,4 +1,4 @@
-package com.practice.springsecurity.security.config.auth;
+package com.practice.springsecurity.security.authentication;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
@@ -36,9 +36,12 @@ public class AuthLevelConfig {
                 .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
                 .and()
                 .authorizeRequests()
-                .antMatchers("/account").authenticated()
-                .antMatchers("/cards").authenticated()
-                .antMatchers("/loans").authenticated()
+//                .antMatchers("/account").authenticated()
+//                .antMatchers("/cards").authenticated()
+//                .antMatchers("/loans").authenticated()
+                .antMatchers("/account").hasAuthority("DELETE")
+                .antMatchers("/cards").hasAuthority("READ")
+                .antMatchers("/loans").hasAuthority("WRITE")
                 .antMatchers("/transactions").authenticated()
                 .antMatchers("/login").authenticated()
                 .antMatchers("/contact").permitAll()

@@ -1,4 +1,4 @@
-package com.practice.springsecurity.security.config.userdetails;
+package com.practice.springsecurity.security.userdetails;
 
 import com.practice.springsecurity.entities.Customer;
 import com.practice.springsecurity.repositories.CustomerRepository;

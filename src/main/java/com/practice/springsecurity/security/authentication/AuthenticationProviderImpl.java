@@ -1,5 +1,6 @@
 package com.practice.springsecurity.security.authentication;
 
+import com.practice.springsecurity.entities.Authority;
 import com.practice.springsecurity.entities.Customer;
 import com.practice.springsecurity.repositories.CustomerRepository;
 import lombok.AllArgsConstructor;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Component
 @AllArgsConstructor
@@ -32,9 +34,9 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
 
         if(customer != null) {
             if(passwordEncoder.matches(credentials, customer.getPwd())) {
-                final String userRole = customer.getRole();
+                final Set<Authority> authorities = customer.getAuthorities();
 
-                return generateAuthToken(username, credentials, userRole);
+                return generateAuthToken(username, credentials, authorities);
             } else {
                 throw new BadCredentialsException("Invalid credentials.");
             }
@@ -44,13 +46,22 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
     }
 
     private UsernamePasswordAuthenticationToken generateAuthToken(final String username, final String credentials,
-            final String userRole) {
+            final Set<Authority> authorities) {
 
-        final List<GrantedAuthority> authorities = new ArrayList<>();
+        final List<GrantedAuthority> userAuthorities = getAuthorities(authorities);
 
-        authorities.add(new SimpleGrantedAuthority(userRole));
+        return new UsernamePasswordAuthenticationToken(username, credentials, userAuthorities);
+    }
 
-        return new UsernamePasswordAuthenticationToken(username, credentials, authorities);
+
+    private List<GrantedAuthority> getAuthorities(final Set<Authority> userAuthorities) {
+        final List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
+
+        for(Authority authority : userAuthorities) {
+            grantedAuthorities.add(new SimpleGrantedAuthority(authority.getName()));
+        }
+
+        return grantedAuthorities;
     }
 
     @Override
