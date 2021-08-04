@@ -1,8 +1,13 @@
-package com.practice.springsecurity.security.authentication;
+package com.practice.springsecurity.security.config;
 
+import com.practice.springsecurity.security.authentication.AuthLevel;
+import com.practice.springsecurity.security.filters.AuthInProgressLogFilter;
+import com.practice.springsecurity.security.filters.AuthSuccessfulLogFilter;
+import com.practice.springsecurity.security.filters.AuthValidationFilter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 import org.springframework.web.cors.CorsConfiguration;
 
@@ -10,7 +15,7 @@ import java.util.Collections;
 
 @Configuration
 @Slf4j
-public class AuthLevelConfig {
+public class CustomHttpSecurityConfig {
 
     public void setConfiguration(final HttpSecurity httpSecurity, final AuthLevel authLevel) throws Exception {
         switch (authLevel) {
@@ -35,10 +40,10 @@ public class AuthLevelConfig {
                 .ignoringAntMatchers("/contact")
                 .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
                 .and()
+                .addFilterBefore(new AuthInProgressLogFilter(), BasicAuthenticationFilter.class)
+                .addFilterBefore(new AuthValidationFilter(), BasicAuthenticationFilter.class)
+                .addFilterAfter(new AuthSuccessfulLogFilter(), BasicAuthenticationFilter.class)
                 .authorizeRequests()
-//                .antMatchers("/account").authenticated()
-//                .antMatchers("/cards").authenticated()
-//                .antMatchers("/loans").authenticated()
                 .mvcMatchers("/account").hasRole("USER")
                 .mvcMatchers("/cards").hasAnyRole("USER", "ADMIN")
                 .mvcMatchers("/loans").hasRole("ADMIN")
