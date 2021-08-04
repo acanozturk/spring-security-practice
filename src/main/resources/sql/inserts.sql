@@ -1,6 +1,7 @@
 INSERT INTO customers(name, email, mobile_number, pwd, role)
-    ('user','user@user.com', '5446875366', '$2a$12$t2lOfR0qySVdkfxp3UGk5OAiZfM3mQKTrVl7zt.tFPpGfgqSQhn1u', 'user'),
-('admin','admin@admin.com', '5554561234', '$2y$12$IPaRi2Qn8dMOP20pXuWggumWXD7M0tRq58GLxtEv7.8Z/.2Ptrxhm', 'admin');
+('user','user@user.com', '5446875366', '$2a$12$t2lOfR0qySVdkfxp3UGk5OAiZfM3mQKTrVl7zt.tFPpGfgqSQhn1u', 'user'),
+('admin','admin@admin.com', '5554561234', '$2y$12$IPaRi2Qn8dMOP20pXuWggumWXD7M0tRq58GLxtEv7.8Z/.2Ptrxhm', 'admin')
+('test','user@test.com', '5446875366', '$2a$12$t2lOfR0qySVdkfxp3UGk5OAiZfM3mQKTrVl7zt.tFPpGfgqSQhn1u', 'user'),;
 
 
 INSERT INTO accounts(customer_id, account_type, branch_address)

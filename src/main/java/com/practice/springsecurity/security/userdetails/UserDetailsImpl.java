@@ -1,5 +1,6 @@
 package com.practice.springsecurity.security.userdetails;
 
+import com.practice.springsecurity.entities.Authority;
 import com.practice.springsecurity.entities.Customer;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
@@ -9,6 +10,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 @AllArgsConstructor
 public class UserDetailsImpl implements UserDetails {
@@ -19,16 +21,14 @@ public class UserDetailsImpl implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        final List<GrantedAuthority> authorities = new ArrayList<>();
+        final List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
+        final Set<Authority> authorities = customer.getAuthorities();
 
-        authorities.add(new SimpleGrantedAuthority(setAuthority()));
+        for(Authority authority : authorities) {
+            grantedAuthorities.add(new SimpleGrantedAuthority(authority.getName()));
+        }
 
-        return authorities;
-    }
-
-    private String setAuthority() {
-
-        return customer.getRole();
+        return grantedAuthorities;
     }
 
     @Override
