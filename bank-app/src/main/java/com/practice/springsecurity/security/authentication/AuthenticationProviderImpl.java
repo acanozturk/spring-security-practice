@@ -32,8 +32,8 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
         final String credentials = authentication.getCredentials().toString();
         final Customer customer = customerRepository.findByEmail(username);
 
-        if(customer != null) {
-            if(passwordEncoder.matches(credentials, customer.getPwd())) {
+        if (customer != null) {
+            if (passwordEncoder.matches(credentials, customer.getPwd())) {
                 final Set<Authority> authorities = customer.getAuthorities();
 
                 return generateAuthToken(username, credentials, authorities);
@@ -46,7 +46,7 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
     }
 
     private UsernamePasswordAuthenticationToken generateAuthToken(final String username, final String credentials,
-            final Set<Authority> authorities) {
+                                                                  final Set<Authority> authorities) {
 
         final List<GrantedAuthority> userAuthorities = getAuthorities(authorities);
 
@@ -57,7 +57,7 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
     private List<GrantedAuthority> getAuthorities(final Set<Authority> userAuthorities) {
         final List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
 
-        for(Authority authority : userAuthorities) {
+        for (Authority authority : userAuthorities) {
             grantedAuthorities.add(new SimpleGrantedAuthority(authority.getName()));
         }
 

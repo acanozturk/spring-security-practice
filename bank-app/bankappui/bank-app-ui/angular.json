@@ -28,7 +28,6 @@
               "src/styles.css"
             ],
             "scripts": [
-
             ]
           },
           "configurations": {
@@ -95,7 +94,6 @@
               "src/styles.css"
             ],
             "scripts": [
-
             ]
           }
         },
@@ -125,6 +123,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "elec-app-ui"
 }

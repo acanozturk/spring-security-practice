@@ -24,7 +24,7 @@ public class UserDetailsImpl implements UserDetails {
         final List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
         final Set<Authority> authorities = customer.getAuthorities();
 
-        for(Authority authority : authorities) {
+        for (Authority authority : authorities) {
             grantedAuthorities.add(new SimpleGrantedAuthority(authority.getName()));
         }
 

@@ -20,7 +20,7 @@ public class AuthSuccessfulLogFilter implements Filter {
         final String name = authentication.getName();
         final Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
 
-        if(authorities.size() > 0) {
+        if (authorities.size() > 0) {
             log.info("Authentication successful for user " + name + " with authorities " + authorities.toString());
         } else {
             log.info("Authentication failed for user " + name);

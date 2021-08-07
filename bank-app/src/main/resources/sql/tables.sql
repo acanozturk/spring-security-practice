@@ -1,5 +1,7 @@
-CREATE DATABASE spring_security;
-USE spring_security;
+CREATE
+DATABASE spring_security;
+USE
+spring_security;
 
 
 CREATE TABLE customers
@@ -100,10 +102,10 @@ CREATE TABLE contacts
 
 CREATE TABLE authorities
 (
-    id      INT          NOT NULL AUTO_INCREMENT,
-    customer_id         INT          NOT NULL,
-    name         VARCHAR(30)          NOT NULL,
-    created_at          TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    id          INT         NOT NULL AUTO_INCREMENT,
+    customer_id INT         NOT NULL,
+    name        VARCHAR(30) NOT NULL,
+    created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id),
     FOREIGN KEY (customer_id) REFERENCES customers (customer_id) ON DELETE CASCADE
 );

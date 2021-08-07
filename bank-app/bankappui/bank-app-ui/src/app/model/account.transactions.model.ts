@@ -1,4 +1,3 @@
-
 export class AccountTransactions {
 
   public accountNumber: number;
@@ -8,16 +7,16 @@ export class AccountTransactions {
   public transactionType: string;
   public transactionAmt: number;
   public closingBalance: number;
-  
-  constructor(accountNumber?: number,customerId?: number,transactionDt?: Date, transactionSummary?: string,
-    transactionType?: string,transactionAmt?: number, closingBalance?: number){
-        this.accountNumber = accountNumber;
-        this.customerId = customerId;
-        this.transactionDt = transactionDt;
-        this.transactionSummary = transactionSummary;
-        this.transactionType = transactionType;
-        this.transactionAmt = transactionAmt;
-        this.closingBalance = closingBalance;
+
+  constructor(accountNumber?: number, customerId?: number, transactionDt?: Date, transactionSummary?: string,
+              transactionType?: string, transactionAmt?: number, closingBalance?: number) {
+    this.accountNumber = accountNumber;
+    this.customerId = customerId;
+    this.transactionDt = transactionDt;
+    this.transactionSummary = transactionSummary;
+    this.transactionType = transactionType;
+    this.transactionAmt = transactionAmt;
+    this.closingBalance = closingBalance;
   }
 
 }

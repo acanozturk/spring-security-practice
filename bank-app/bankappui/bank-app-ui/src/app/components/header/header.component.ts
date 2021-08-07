@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/model/user.model';
+import {Component, OnInit} from '@angular/core';
+import {User} from 'src/app/model/user.model';
 
 @Component({
   selector: 'app-header',
@@ -7,16 +7,16 @@ import { User } from 'src/app/model/user.model';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  
+
   user = new User();
 
   constructor() {
-    
+
   }
 
   ngOnInit() {
     let userDetails = JSON.parse(sessionStorage.getItem('userdetails'));
-    if(userDetails){
+    if (userDetails) {
       this.user = JSON.parse(sessionStorage.getItem('userdetails'));
     }
   }

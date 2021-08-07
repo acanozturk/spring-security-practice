@@ -28,10 +28,10 @@ public class AuthValidationFilter implements Filter {
 
         String authHeader = servletRequest.getHeader(AUTHORIZATION);
 
-        if(authHeader != null) {
+        if (authHeader != null) {
             authHeader = authHeader.trim();
 
-            if(StringUtils.startsWithIgnoreCase(authHeader, AUTH_SCHEME_BASIC)) {
+            if (StringUtils.startsWithIgnoreCase(authHeader, AUTH_SCHEME_BASIC)) {
                 applyFilter(authHeader, servletResponse);
             }
         }
@@ -52,7 +52,7 @@ public class AuthValidationFilter implements Filter {
 
             final String email = token.substring(0, delimiter);
 
-            if(email.toLowerCase().contains(FILTER)) {
+            if (email.toLowerCase().contains(FILTER)) {
                 servletResponse.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             }
         } catch (IllegalArgumentException e) {

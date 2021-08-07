@@ -6,24 +6,29 @@
   display: flex;
   position: relative;
 }
+
 .top-section {
   display: flex;
   justify-content: space-between;
   padding: 20px 0;
 }
+
 .hleft {
   display: flex;
   align-items: center;
   position: relative;
 }
+
 .hleft .logo {
   margin-right: 18px;
   padding-left: 18px;
 }
+
 .hleft .logo img {
   max-width: 150px;
   display: block;
 }
+
 .hleft .logo .partner-txt {
   position: absolute;
   font-size: 10px;
