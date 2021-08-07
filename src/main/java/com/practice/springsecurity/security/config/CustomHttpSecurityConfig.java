@@ -47,7 +47,7 @@ public class CustomHttpSecurityConfig {
                 .mvcMatchers("/account").hasRole("USER")
                 .mvcMatchers("/cards").hasAnyRole("USER", "ADMIN")
                 .mvcMatchers("/loans").hasAnyRole("USER", "ADMIN")
-                .mvcMatchers("/transactions").authenticated()
+                .mvcMatchers("/transactions").hasAnyRole("USER")
                 .mvcMatchers("/login").authenticated()
                 .mvcMatchers("/contact").permitAll()
                 .mvcMatchers("/notices").permitAll()
